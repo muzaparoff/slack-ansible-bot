@@ -1,0 +1,15 @@
+#!/bin/sh
+
+USER_HOME="/home/$USER"
+HUBOT_ROOT="/opt/slack-ansible-bot/"
+HUBOT_HOME="$HUBOT_ROOT/node_modules/hubot"
+DAEMON="$HUBOT_HOME/bin/hubot"
+PIDFILE=$HUBOT_ROOT/hubot.pid
+HUBOT_SLACK_TOKEN=xoxb
+
+set -e
+
+npm install
+export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
+
+exec node_modules/.bin/hubot --name "slack-ansible-bot" "$@"

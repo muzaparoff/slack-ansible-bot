@@ -1,0 +1,8 @@
+{
+    "apps": [{
+        "script" : "/opt/slack-ansible-bot/bin/hubot",
+        "name" : "slack-ansible-bot",
+        "args": "--adapter slack",
+        "env": {"HUBOT_SLACK_TOKEN": "xoxb"}
+    }]
+}
